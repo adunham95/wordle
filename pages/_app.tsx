@@ -1,15 +1,15 @@
 import App from 'next/app';
 import React from 'react';
 import '../styles/globals.css';
-import { LetterProvider } from '../components/letterProvider/letterProvider';
+import AppProvider from '../state/context';
 
 export class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <LetterProvider>
+      <AppProvider>
         <Component {...pageProps} />
-      </LetterProvider>
+      </AppProvider>
     );
   }
 }

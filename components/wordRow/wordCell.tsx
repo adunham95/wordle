@@ -1,11 +1,7 @@
 import React from 'react';
+import { ILetter } from '../../interface/interfaces';
 
-export interface ILetterCell{
-    state?: '' | 'letter' | 'position-letter'
-    letter?: string
-}
-
-function WordCell(props: ILetterCell) {
+function WordCell(props: ILetter) {
   const {
     state = '',
     letter = '',

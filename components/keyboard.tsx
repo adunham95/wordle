@@ -1,24 +1,25 @@
 import React from 'react';
-import { useDispatchLetter } from './letterProvider/letterProvider';
+import { ActionType } from '../state/actions';
+import { useAppDispatch } from '../state/context';
 
 interface ISingleLetter{
     letter: string,
-    action?: string
+    action?: ActionType
 }
 
 const letters: Array<Array<ISingleLetter>> = [
   [{ letter: 'q' }, { letter: 'w' }, { letter: 'e' }, { letter: 'r' }, { letter: 't' }, { letter: 'y' }, { letter: 'u' }, { letter: 'i' }, { letter: 'o' }, { letter: 'p' }],
   [{ letter: 'a' }, { letter: 's' }, { letter: 'd' }, { letter: 'f' }, { letter: 'g' }, { letter: 'h' }, { letter: 'j' }, { letter: 'k' }, { letter: 'l' }],
-  [{ letter: 'z' }, { letter: 'x' }, { letter: 'c' }, { letter: 'v' }, { letter: 'b' }, { letter: 'n' }, { letter: 'm' }, { letter: 'Enter', action: 'SUBMIT' }],
+  [{ letter: 'z' }, { letter: 'x' }, { letter: 'c' }, { letter: 'v' }, { letter: 'b' }, { letter: 'n' }, { letter: 'm' }, { letter: 'Enter', action: ActionType.Submit }],
 ];
 
 function Keyboard() {
-  const dispatch = useDispatchLetter();
+  const dispatch = useAppDispatch();
 
-  const action = (payload: string, type: string) => {
+  const action = (payload: string, type: ActionType) => {
     console.log(type);
     dispatch({
-      type: (typeof type === 'undefined') ? 'ADD_LETTER' : type,
+      type: (typeof type === 'undefined') ? ActionType.Add_Letter : type,
       payload,
     });
   };
