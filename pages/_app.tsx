@@ -1,5 +1,6 @@
 import App from 'next/app';
 import React from 'react';
+import '../styles/globals.css';
 import { LetterProvider } from '../components/letterProvider/letterProvider';
 
 export class MyApp extends App {
