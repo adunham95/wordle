@@ -1,10 +1,13 @@
+import { Header } from '../components/header';
+import WordRow from '../components/wordRow/wordRow';
+
 function HomePage() {
-  return(
-  <h1 className="text-3xl font-bold underline">
-  Hello world!
-</h1>
-  )
+  return (
+    <>
+      <Header />
+      <WordRow />
+    </>
+  );
+}
 
-  }
-
-  export default HomePage
+export default HomePage;
