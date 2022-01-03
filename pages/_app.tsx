@@ -47,11 +47,11 @@ export class MyApp extends App {
           />
           <link
             rel="apple-touch-icon"
-            href="/apple-icon.png"
+            href="/icons/apple-icon.png"
           />
           <meta
             name="theme-color"
-            content="#317EFB"
+            content="#0000ff"
           />
         </Head>
         <Component {...pageProps} />
