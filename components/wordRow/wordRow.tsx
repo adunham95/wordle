@@ -1,30 +1,31 @@
 import React from 'react';
-import WordCell, { ILetterCell } from './wordCell';
+import { EStatus, ILetter } from '../../interface/interfaces';
+import WordCell from './wordCell';
 
 interface IProps{
-    letters?: ILetterCell[]
+    letters?: ILetter[]
 }
 
-const rowDefault: ILetterCell[] = [
+const rowDefault: ILetter[] = [
   {
     letter: 'A',
-    state: '',
+    state: EStatus.EMPTY,
   },
   {
     letter: 'B',
-    state: '',
+    state: EStatus.EMPTY,
   },
   {
     letter: 'C',
-    state: '',
+    state: EStatus.EMPTY,
   },
   {
     letter: 'D',
-    state: '',
+    state: EStatus.EMPTY,
   },
   {
     letter: 'E',
-    state: '',
+    state: EStatus.EMPTY,
   },
 ];
 

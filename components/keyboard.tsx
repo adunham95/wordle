@@ -14,13 +14,14 @@ const letters: Array<Array<ISingleLetter>> = [
 ];
 
 function Keyboard() {
-  const dispatch = useAppDispatch();
+  const { dispatch } = useAppDispatch();
 
   const action = (payload: string, type: ActionType) => {
-    console.log(type);
+    // console.log(type);
+    console.log(payload);
     dispatch({
-      type: (typeof type === 'undefined') ? ActionType.Add_Letter : type,
-      payload,
+      type: typeof type === 'undefined' ? ActionType.Add_Letter : type,
+      payload: { letter: payload },
     });
   };
 

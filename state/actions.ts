@@ -6,23 +6,29 @@ export enum ActionType {
     Submit,
 }
 
+interface IPayload{
+    letter?: string,
+    word?: string
+}
+
 export interface AddLetter {
     type: ActionType.Add_Letter,
-    payload: {letter: string}
+    payload: IPayload
 }
 
 export interface DeleteLetter {
     type: ActionType.Delete_Letter,
-    payload: {letter: string, row: number}
+    payload: IPayload
 }
 
 export interface UpdateWord {
     type: ActionType.Update_Word,
-    payload: {word: string}
+    payload: IPayload
 }
 
 export interface Submit {
     type: ActionType.Submit
+    payload: IPayload
 }
 
 export type GameActions = AddLetter | DeleteLetter | UpdateWord | Submit
