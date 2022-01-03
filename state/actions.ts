@@ -21,4 +21,8 @@ export interface UpdateWord {
     payload: {word: string}
 }
 
-export type GameActions = AddLetter | DeleteLetter | UpdateWord
+export interface Submit {
+    type: ActionType.Submit
+}
+
+export type GameActions = AddLetter | DeleteLetter | UpdateWord | Submit
